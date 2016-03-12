@@ -1,0 +1,44 @@
+4/25:
+Branding:
+-splash screen ("powered by soundcloud")
+
+Playing:
+-"selection/button press" feel for clicking a song
+-current song playing indication/display
+-next song auto plays? (only if the above, that's for sure)
+
+Liking:
+-likes persist
+-bigger numbers center in votes
+
+The feed:
+-decay (cloud code)
+-how many to load?
+
+Shout!:
+-add "search-shout" and relevant affordances (ex "?"), 
+ -"old school mode"
+
+Comments:
+
+JamJar:
+-discover what the JamJar can hold
+[my jams, shouts, about (feedback, update, et al)]
+
+Abuse prevention:
+-one shout each genre, each day
+-script removal function all inputs
+-inputs that are too long
+-no internet connection
+
+-----------------------------------------------------
+*/ Release Prep */
+-teaser video
+-screenshots
+-crystal clear description
+
+^ all of these on all three app stores
+
+*/ RELEASE */
+-google analytics
+-----------------------------------------------------

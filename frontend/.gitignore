@@ -1,0 +1,6 @@
+Windows/jamshout/bin/
+Windows/jamshout/bld/
+Windows/jamshout/obj/
+*.suo
+*.user
+*.exe

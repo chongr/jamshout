@@ -1,0 +1,272 @@
+/* top level */
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Raleway-Regular.ttf');
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 60px;
+}
+
+h1 {
+  color: white;
+  font-size: 2em;
+}
+
+/* navbar */
+
+nav > .container {
+  height: 60px;
+  background-color: #674EA7;
+  box-shadow: 0px 2px 4px #888888;
+  text-align: center;
+}
+
+.container > h1 {
+  margin-top: 16px;
+}
+
+#jarIcon {
+  position: absolute;
+  left: 4vw;
+  font-size: 1.5em;
+  height: 1.75em;
+  width: auto;
+  top: 20%;
+}
+
+#jarMenu {
+  position: absolute;
+  left: 4vw;
+  font-size: 1.75em;
+  color: white;
+}
+
+#shoutIcon, #jarBackIcon {
+  position: absolute;
+  right: 4vw;
+  top: 30%;
+  font-size: 2em;
+  color: white;
+  background-color: #674EA7;
+}
+
+#shoutBackIcon {
+  position: absolute;
+  left: 4vw;
+  font-size: 2em;
+  color: white;
+}
+
+#shoutBackIcon,
+#jarBackIcon,
+#jarMenu {
+  top: 3%;  
+}
+
+/* modals */
+
+#genreModal > .modal-dialog {
+  position: absolute;
+  bottom: 65px;
+}
+
+.modal-content {
+  background-color: #674EA7;
+}
+
+.modal-header > .close {
+  font-size: 2em;
+  color: white;
+}
+
+.modal-title {
+  text-align: center;
+  color: white;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-body > button {
+  background-color: white;
+  color: #674EA7;
+  margin-right: .25em;
+  margin-bottom: .5em;
+}
+
+/* content */
+
+.no-padding {
+  padding: 0;
+}
+
+.popup {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #674EA7;
+}
+
+.popup > h1 {
+  position: relative;
+  top: 30vh;
+}
+
+#content-view {
+  background-color: white;
+  /* navbar is 60px */
+  margin-top: 68px;
+}
+
+#noInternetModal {
+  position: absolute;
+  top: 30vh;
+  text-align: center;
+  color: white;
+}
+
+#refresh {
+  margin-top: 1.5em;
+}
+
+/* jamTab */
+
+.jamTab {
+  position: relative;
+}
+
+.jamTab > h4 {
+  color: grey;
+}
+
+.jamTab > h5 {
+  color: grey;
+}
+
+.jamTab > hr {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.jamTab > span {
+  display: inline-block;  
+}
+
+.votingWrapper {
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+}
+
+.voteButton {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: #BFB5DA;
+  font-size: 1.5em;
+}
+
+.upV {
+  margin-top: .625vh;
+}
+
+.voteTotal {
+  display: block;
+  color: #674EA7;
+  margin: -.5em 0 auto 0;
+}
+
+.upvoted {
+  color: #674EA7;
+}
+
+.downvoted {
+  color: red;
+}
+
+/* footer */
+
+#bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #674EA7; 
+}
+
+#newHot, #genreMenu {
+  position: absolute;
+  top: 20px;
+  font-size: 1.75em;
+  color: white;
+}
+
+#newHot {
+  left: 4vw;
+}
+
+#genreMenu {
+  right: 4vw;
+}
+
+#player {
+  position: absolute;
+  top: 17px;
+  left: 17vw;
+  width: 65%;
+}
+
+
+/*
+
+misc
+
+*/
+
+
+/* no scrollbars */
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* fade modal from bottom */
+
+.modal.fade:not(.in) .modal-dialog {
+    -webkit-transform: translate3d(0, 125%, 0);
+    transform: translate3d(0, 125%, 0);
+}
+
+/* input placeholders */
+
+::-webkit-input-placeholder {
+   text-align: center;
+   font-family: 'Raleway', sans-serif;
+}
+
+:-moz-placeholder {
+   text-align: center; 
+   font-family: 'Raleway', sans-serif; 
+}
+
+::-moz-placeholder {
+   text-align: center;
+   font-family: 'Raleway', sans-serif; 
+}
+
+:-ms-input-placeholder {  
+   text-align: center;
+   font-family: 'Raleway', sans-serif; 
+}
