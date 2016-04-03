@@ -5,4 +5,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^all_songs/$', views.SongList.as_view()),
+    url(r'^(?P<pk>[0-9]+)/$', views.SongDetail.as_view())
 ]
