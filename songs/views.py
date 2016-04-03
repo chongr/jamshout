@@ -1,8 +1,11 @@
-from django.shortcuts import render
-# Create your views here.
-import json
-from django.http import HttpResponse
+from songs.models import Song
+from songs.serializers import SongSerializer
+from rest_framework import generics
 
-def all_songs(request):
-    data = {'foo': 'bar', 'hello': 'world'}
-    return HttpResponse(json.dumps(data), content_type='application/json')
+class SongList(generics.ListCreateAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+
+class SongDetail(generics.RetrieveAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
