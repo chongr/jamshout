@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^songs/', include('songs.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^vote/', include('vote.urls'))
 ]
