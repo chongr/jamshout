@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework',
+    'django_extensions',
+    'artist.apps.ArtistConfig',
     'vote.apps.VoteConfig',
     'songs.apps.SongsConfig',
     'django.contrib.admin',

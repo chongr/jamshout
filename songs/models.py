@@ -7,5 +7,6 @@ from django.db import models
 class Song(models.Model):
     song_url = models.CharField(max_length=255)
     song_name = models.CharField(max_length=255, default = '')
+    artist = models.ForeignKey('artist.Artist', related_name='songs')
     def __str__(self):
         return self.song_name + ' (' + self.song_url + ')'

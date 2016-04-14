@@ -66,7 +66,7 @@ function bindHandlers(){
 
     //noInternet refresh
     $('#noInternetModal').on('hidden.bs.modal', function (e) {
-        refresh(); 
+        refresh();
     });
     $("#refresh").click(function(){
         $("#noInternetModal").modal("hide");
@@ -74,7 +74,7 @@ function bindHandlers(){
 
     //play song onClick
     $('#content-view').click(function (e) {
-        if(e.target.classList[0] === "playOnClick") 
+        if(e.target.classList[0] === "playOnClick")
             play(e.target.attributes['link'].nodeValue);
     });
 }
@@ -94,7 +94,7 @@ function refresh() {
         success: function(data){
             displayJams(data.results);
         }
-    }); 
+    });
 }
 
 function displayJams(jams) {
@@ -107,33 +107,33 @@ function displayJams(jams) {
     //write jams to content-view
     for(var jam in jams) {
 
-        var vote, upvoted = "", downvoted = ""; 
+        var vote, upvoted = "", downvoted = "";
 
-        vote = localStorage.getItem("vote:" + jams[jam].objectId);
+        vote = localStorage.getItem("vote:" + jams[jam].id);
         if(vote === "upvoted")
             upvoted = "upvoted";
         else if (vote === "downvoted")
             downvoted = "downvoted";
         else
-            localStorage.removeItem("vote:" + jams[jam].objectId);
+            localStorage.removeItem("vote:" + jams[jam].id);
 
 
         //jamTab header
         var html = "<div class='playOnClick jamTab' link=\"" + jams[jam].link + "\"" + ">";
         //song
-        html += "<span class='playOnClick'><h4 class='playOnClick'>" + jams[jam].song + "</h4>";
+        html += "<span class='playOnClick'><h4 class='playOnClick'>" + jams[jam].song_name + "</h4>";
         //artist
         html += "<h5 class='playOnClick'>" + jams[jam].artist + "</h5></span>";
-        //votingWrapper header  
+        //votingWrapper header
         html += "<div class='votingWrapper'>";
         //upvote
-        html += "<button type='button' class='glyphicon glyphicon-menu-up voteButton upV " + upvoted + "' id='upvote" + jams[jam].objectId + "'";
-        html += "onclick='upVote(\"" + jams[jam].objectId + "\", \"" + jams[jam].votes + "\");'></button>";
+        html += "<button type='button' class='glyphicon glyphicon-menu-up voteButton upV " + upvoted + "' id='upvote" + jams[jam].id + "'";
+        html += "onclick='upVote(\"" + jams[jam].id + "\", \"" + jams[jam].votes + "\");'></button>";
         //voteTotal
-        html += "<h5 class='voteTotal' id='voteTotal" + jams[jam].objectId + "'>" + jams[jam].votes + "</h5>";
+        html += "<h5 class='voteTotal' id='voteTotal" + jams[jam].id + "'>" + jams[jam].votes + "</h5>";
         //downvote
-        html += "<button type='button' class='glyphicon glyphicon-menu-down voteButton " + downvoted + "' id='downvote" + jams[jam].objectId + "'";
-        html += "onclick='downVote(\"" + jams[jam].objectId + "\", \"" + jams[jam].votes + "\");'></button></div><hr/></div>";
+        html += "<button type='button' class='glyphicon glyphicon-menu-down voteButton " + downvoted + "' id='downvote" + jams[jam].id + "'";
+        html += "onclick='downVote(\"" + jams[jam].id + "\", \"" + jams[jam].votes + "\");'></button></div><hr/></div>";
 
         $("#content-view").append(html);
     }
@@ -163,6 +163,6 @@ function filterByGenre(jam) {
 function filterJams(jams) {
     if (filterType === "All")
         return jams;
-    else 
+    else
         return jams.filter(filterByGenre);
 }

@@ -7,7 +7,7 @@ class SongSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Song
-        fields = ('song_url', 'song_name', 'vote_count')
+        fields = ('song_url', 'song_name', 'vote_count', 'id')
 
     def get_vote_count(self, obj):
         return obj.votes.count()

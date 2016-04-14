@@ -5,5 +5,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^make_vote/$', views.VoteCreate.as_view()),
-    url(r'^user_votes/$', views.VotesCurrentUser.as_view())
+    url(r'^user_votes/$', views.VotesCurrentUser.as_view()),
+    url(r'^(?P<pk>[0-9]+)/$', views.VoteDelete.as_view())
 ]
