@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
+from django.conf import settings
+from django.contrib.staticfiles import views
+
 
 urlpatterns = [
     url(r'^songs/', include('songs.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^vote/', include('vote.urls'))
+    url(r'^vote/', include('vote.urls')),
+    url(r'^$', TemplateView.as_view(template_name='templates/index.html'), name='root')
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^static/(?P<path>.*)$', views.serve),
+    ]

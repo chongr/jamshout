@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <!-- meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,13 @@
     <meta name="description" content="new music.">
 
     <!-- css -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="res/favicon.jpg">
+    <link rel="stylesheet" href="/jamshout/static/jamshout/web/css/bootstrap.css">
+    <link rel="stylesheet" href="{% static "web/css/index.css" %}">
+    <link rel="icon" href="/jamshout/static/jamshout/web/res/favicon.jpg">
   </head>
 
   <body>
-        
+
     <!-- navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container">
@@ -28,7 +29,7 @@
     </nav>
 
     <!-- shout -->
-    <div class="popup" id="shoutPopup"> 
+    <div class="popup" id="shoutPopup">
       <span class ="glyphicon glyphicon-menu-left" id="shoutBackIcon"></span>
       <h1>SHOUT</h1>
     </div>
@@ -97,17 +98,17 @@
         <audio id="player" controls></audio>
         <span class="glyphicon glyphicon-menu-hamburger" id="genreMenu"></span>
       </div>
-    </div> 
+    </div>
     <!-- ./container -->
 
     <!-- scripts -->
-    <script src="js/soundcloud.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/shout.js"></script>
-    <script src="js/vote.js"></script>
-    <script src="js/play.js"></script>
+    <script src="jamshout/static/frontend/web/js/soundcloud.js"></script>
+    <script src="jamshout/static/frontend/web/js/jquery.js"></script>
+    <script src="jamshout/static/frontend/web/js/bootstrap.js"></script>
+    <script src="jamshout/static/frontend/web/js/main.js"></script>
+    <script src="jamshout/static/frontend/web/js/shout.js"></script>
+    <script src="jamshout/static/frontend/web/js/vote.js"></script>
+    <script src="jamshout/static/frontend/web/js/play.js"></script>
 
   </body>
 </html>

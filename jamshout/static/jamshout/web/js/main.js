@@ -82,17 +82,15 @@ function bindHandlers(){
 function refresh() {
     filterType = localStorage.getItem("filterType");
     sortType = localStorage.getItem("sortType");
-
     $.ajax({
-        url: url,
+        url: '/songs/all_songs/',
         type:"GET",
         dataType:"json",
-        headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restKey},
         error: function(data){
             $("#noInternetModal").modal("show");
         },
         success: function(data){
-            displayJams(data.results);
+            displayJams(data);
         }
     });
 }
@@ -128,12 +126,12 @@ function displayJams(jams) {
         html += "<div class='votingWrapper'>";
         //upvote
         html += "<button type='button' class='glyphicon glyphicon-menu-up voteButton upV " + upvoted + "' id='upvote" + jams[jam].id + "'";
-        html += "onclick='upVote(\"" + jams[jam].id + "\", \"" + jams[jam].votes + "\");'></button>";
+        html += "onclick='upVote(\"" + jams[jam].id + "\", \"" + jams[jam].vote_count + "\");'></button>";
         //voteTotal
-        html += "<h5 class='voteTotal' id='voteTotal" + jams[jam].id + "'>" + jams[jam].votes + "</h5>";
+        html += "<h5 class='voteTotal' id='voteTotal" + jams[jam].id + "'>" + jams[jam].vote_count + "</h5>";
         //downvote
         html += "<button type='button' class='glyphicon glyphicon-menu-down voteButton " + downvoted + "' id='downvote" + jams[jam].id + "'";
-        html += "onclick='downVote(\"" + jams[jam].id + "\", \"" + jams[jam].votes + "\");'></button></div><hr/></div>";
+        html += "onclick='downVote(\"" + jams[jam].id + "\", \"" + jams[jam].vote_count + "\");'></button></div><hr/></div>";
 
         $("#content-view").append(html);
     }
