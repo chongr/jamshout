@@ -206,7 +206,7 @@ nav > .container {
   background-color: #674EA7; 
 }
 
-#newHot, #genreMenu, #userMenu {
+#newHot, #genreMenu {
   position: absolute;
   top: 20px;
   font-size: 1.75em;
@@ -218,8 +218,7 @@ nav > .container {
 }
 
 #genreMenu {
-  padding-left: 15px;
-  left: 8vw;
+  right: 4vw;
 }
 
 #player {
@@ -229,9 +228,6 @@ nav > .container {
   width: 65%;
 }
 
-#userMenu {
-  right: 4vw;
-}
 
 /*
 

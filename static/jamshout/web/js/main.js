@@ -57,11 +57,6 @@ function bindHandlers(){
         $('#genreModal').modal('toggle');
     });
 
-    //userMenu
-    $("#userMenu").click(function(){
-      $('#userModal').modal('toggle')
-    });
-
     //genreButtons
     $(".gB").click(function(){
         localStorage.setItem("filterType", $(this).text());
@@ -82,23 +77,6 @@ function bindHandlers(){
         if(e.target.classList[0] === "playOnClick")
             play(e.target.attributes['link'].nodeValue);
     });
-
-    $('#login').click(function (e){
-      email = $('#email').val();
-      password = $('#password').val();
-      login(email, password);
-    });
-}
-
-function login() {
-  $.ajax({
-    url: '/rest-auth/login/',
-    type: 'POST',
-    dataType: "json",
-    success: function(data){
-	localStorage.setItem('loggedUser', data)
-    } 
-  });
 }
 
 function refresh() {

@@ -67,6 +67,26 @@
       </div>
     </div>
 
+    <!-- user login modal -->
+    <div class="modal fade bs-example-modal-sm" id="userModal">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title">Login</h4>
+          </div>
+          <div class="modal-body">
+            <div>Email:<input id='email' type="text" name="email"></div>
+            <div>Password:<input id='password' type="password" name="password"></div>
+            <button id='login' class="btn btn-sm gB" type="button">Login</button>
+            <button id='register' class="btn btn-sm gB" type="button">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- noInternet modal -->
     <div class="modal fade bs-example-modal-sm" id="noInternetModal">
       <div class="modal-dialog modal-sm">
@@ -95,8 +115,9 @@
       <!-- [experiemental] footer -->
       <div id="bottom">
         <span class="glyphicon glyphicon-fire" id="newHot"></span>
+        <span class="glyphicon glyphicon-filter" id="genreMenu"></span>
         <audio id="player" controls></audio>
-        <span class="glyphicon glyphicon-menu-hamburger" id="genreMenu"></span>
+        <span class="glyphicon glyphicon-menu-hamburger" id='userMenu'></span>
       </div>
     </div>
     <!-- ./container -->
