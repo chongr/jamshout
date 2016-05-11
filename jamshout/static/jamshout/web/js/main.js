@@ -10,7 +10,7 @@ $(document).ready(function() {
     filterType = localStorage.getItem("filterType");
     if(filterType === null){
         localStorage.setItem("filterType", "All");
-        filterType = "all";
+        filterType = "All";
     }
 
     //initialize
