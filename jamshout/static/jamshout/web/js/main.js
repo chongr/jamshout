@@ -18,6 +18,36 @@ $(document).ready(function() {
     refresh();
 });
 
+// Set csrftoken for ajax request
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
 function bindHandlers(){
     //shout
     $("#shoutIcon, #shoutBackIcon").click(function(){
@@ -59,11 +89,16 @@ function bindHandlers(){
 
     //userMenu
     $("#userMenu").click(function(){
-      $('#userModal').modal('toggle')
+      if (localStorage.getItem("loggedUser") != "null") {
+        $('#loggedInModal').modal('toggle');
+      }
+      else {
+        $('#userModal').modal('toggle');
+      }
     });
 
     //genreButtons
-    $(".gB").click(function(){
+    $(".genre-button").click(function(){
         localStorage.setItem("filterType", $(this).text());
         $("#genreModal").modal('toggle');
         refresh();
@@ -88,16 +123,48 @@ function bindHandlers(){
       password = $('#password').val();
       login(email, password);
     });
+
+    $('#logout').click(function (e){
+      logout();
+    });
 }
 
-function login() {
+function switchUserModal() {
+    $("#userModal").modal("toggle");
+    $("#loggedInModal").modal("toggle");
+}
+
+function logout() {
+  $.ajax({
+    url: '/rest-auth/logout/',
+    type: 'POST',
+    dataType: "json",
+    data: {csrfmiddlewaretoken: csrftoken, token: localStorage.getItem('loggedUser')['key']},
+    success: function(data){
+         localStorage.setItem('loggedUser', null);
+         csrftoken = getCookie('csrftoken');
+         switchUserModal();
+    },
+    error: function(data){
+      console.log(data);
+    }
+  });
+}
+
+function login(email, password) {
   $.ajax({
     url: '/rest-auth/login/',
     type: 'POST',
     dataType: "json",
+    data: {csrfmiddlewaretoken: csrftoken, email: email, password: password, username: email.split('@')[0]},
     success: function(data){
-	localStorage.setItem('loggedUser', data)
-    } 
+	       localStorage.setItem('loggedUser', JSON.stringify(data))
+         csrftoken = getCookie('csrftoken');
+         switchUserModal();
+    },
+    error: function(data){
+      console.log(data);
+    }
   });
 }
 

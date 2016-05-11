@@ -52,16 +52,16 @@
             <h4 class="modal-title">Genre&nbsp;:</h4>
           </div>
           <div class="modal-body">
-            <button class="btn btn-sm gB" type="button">All</button>
-            <button class="btn btn-sm gB" type="button">Pop</button>
-            <button class="btn btn-sm gB" type="button">Indie/Alt</button>
-            <button class="btn btn-sm gB" type="button">Rap</button>
-            <button class="btn btn-sm gB" type="button">Rock</button>
-            <button class="btn btn-sm gB" type="button">Country</button>
-            <button class="btn btn-sm gB" type="button">R&amp;B</button>
-            <button class="btn btn-sm gB" type="button">Electronic</button>
-            <button class="btn btn-sm gB" type="button">World</button>
-            <button class="btn btn-sm gB" type="button">Other</button>
+            <button class="btn btn-sm gB genre-button" type="button">All</button>
+            <button class="btn btn-sm gB genre-button" type="button">Pop</button>
+            <button class="btn btn-sm gB genre-button" type="button">Indie/Alt</button>
+            <button class="btn btn-sm gB genre-button" type="button">Rap</button>
+            <button class="btn btn-sm gB genre-button" type="button">Rock</button>
+            <button class="btn btn-sm gB genre-button" type="button">Country</button>
+            <button class="btn btn-sm gB genre-button" type="button">R&amp;B</button>
+            <button class="btn btn-sm gB genre-button" type="button">Electronic</button>
+            <button class="btn btn-sm gB genre-button" type="button">World</button>
+            <button class="btn btn-sm gB genre-button" type="button">Other</button>
           </div>
         </div>
       </div>
@@ -78,10 +78,36 @@
             <h4 class="modal-title">Login</h4>
           </div>
           <div class="modal-body">
-            <div>Email:<input id='email' type="text" name="email"></div>
-            <div>Password:<input id='password' type="password" name="password"></div>
+            <p>
+              <label class="login-container" for="email">Email:</label>
+              <input id='email' type="text" name="email"/>
+            </p>
+            <p>
+              <label class="login-container" for="password">Password:</label>
+              <input id='password' type="password" name="password"/>
+            </p>
             <button id='login' class="btn btn-sm gB" type="button">Login</button>
             <button id='register' class="btn btn-sm gB" type="button">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user logged in modal -->
+    <div class="modal fade bs-example-modal-sm" id="loggedInModal">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title">Welcome to Jamshout</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Manage Profile
+            </p>
+            <button id='logout' class="btn btn-sm gB" type="button">Logout</button>
           </div>
         </div>
       </div>

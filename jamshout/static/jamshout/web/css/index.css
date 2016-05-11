@@ -65,7 +65,7 @@ nav > .container {
 #shoutBackIcon,
 #jarBackIcon,
 #jarMenu {
-  top: 3%;  
+  top: 3%;
 }
 
 /* modals */
@@ -158,7 +158,7 @@ nav > .container {
 }
 
 .jamTab > span {
-  display: inline-block;  
+  display: inline-block;
 }
 
 .votingWrapper {
@@ -203,7 +203,7 @@ nav > .container {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #674EA7; 
+  background-color: #674EA7;
 }
 
 #newHot, #genreMenu, #userMenu {
@@ -233,6 +233,24 @@ nav > .container {
   right: 4vw;
 }
 
+/* Login modal */
+
+#email {
+  color: black;
+  width: 150px;
+}
+
+#password {
+  color: black;
+  width: 150px;
+}
+
+.login-container {
+  display: inline-block;
+  width: 84px;
+  color: white;
+}
+
 /*
 
 misc
@@ -242,8 +260,8 @@ misc
 
 /* no scrollbars */
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 /* fade modal from bottom */
@@ -261,16 +279,16 @@ misc
 }
 
 :-moz-placeholder {
-   text-align: center; 
-   font-family: 'Raleway', sans-serif; 
+   text-align: center;
+   font-family: 'Raleway', sans-serif;
 }
 
 ::-moz-placeholder {
    text-align: center;
-   font-family: 'Raleway', sans-serif; 
+   font-family: 'Raleway', sans-serif;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    text-align: center;
-   font-family: 'Raleway', sans-serif; 
+   font-family: 'Raleway', sans-serif;
 }
