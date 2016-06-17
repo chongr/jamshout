@@ -114,8 +114,9 @@ function bindHandlers(){
 
     //play song onClick
     $('#content-view').click(function (e) {
-        if(e.target.classList[0] === "playOnClick")
-            play(e.target.attributes['link'].nodeValue);
+        if(e.target.classList[0] === "playOnClick") {
+            play(e.target.attributes['link'].value);
+          }
     });
 
     $('#login').click(function (e){
@@ -204,13 +205,13 @@ function displayJams(jams) {
         else
             localStorage.removeItem("vote:" + jams[jam].id);
 
-
         //jamTab header
-        var html = "<div class='playOnClick jamTab' link=\"" + jams[jam].link + "\"" + ">";
+        var link = "link=\"" + jams[jam].song_url + "\""
+        var html = "<div class='playOnClick jamTab' " + link + ">";
         //song
-        html += "<span class='playOnClick'><h4 class='playOnClick'>" + jams[jam].song_name + "</h4>";
+        html += "<span class='playOnClick' " + link + "><h4 class='playOnClick' " + link + ">" + jams[jam].song_name + "</h4>";
         //artist
-        html += "<h5 class='playOnClick'>" + jams[jam].artist + "</h5></span>";
+        html += "<h5 class='playOnClick' " + link + ">" + jams[jam].artist + "</h5></span>";
         //votingWrapper header
         html += "<div class='votingWrapper'>";
         //upvote
